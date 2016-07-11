@@ -15,4 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
-.idea/*
+
+/sample_app/.idea/
