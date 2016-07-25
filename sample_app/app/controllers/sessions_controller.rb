@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
       # login user, then rewrite user page
     else
       # create an error info
-      flash[:danger] = 'Invalid email/password combination' # 不完全正确
+      # flash[:danger] = 'Invalid email/password combination' # 不完全正确
+      flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
     end
   end
