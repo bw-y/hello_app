@@ -9,9 +9,14 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
 
   # return hash summary with specify string
+  # def User.digest(string)
+  #   cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+  #                                                 BCrypt::Engine.cost
+  #   BCrypt::Password.create(string, cost: cost)
+  # end
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
+        BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 end
